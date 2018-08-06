@@ -9,6 +9,7 @@ import (
 	"google.golang.org/grpc/status"
 
 	api_pb "github.com/izumin5210-sandbox/grapi-playground/api"
+	type_pb "github.com/izumin5210-sandbox/grapi-playground/api/type"
 )
 
 // NewLibraryServiceServer creates a new LibraryServiceServer instance.
@@ -27,17 +28,17 @@ func (s *libraryServiceServerImpl) ListBooks(ctx context.Context, req *api_pb.Li
 	return nil, status.Error(codes.Unimplemented, "TODO: You should implement it!")
 }
 
-func (s *libraryServiceServerImpl) GetBook(ctx context.Context, req *api_pb.GetBookRequest) (*api_pb.Book, error) {
+func (s *libraryServiceServerImpl) GetBook(ctx context.Context, req *api_pb.GetBookRequest) (*type_pb.Book, error) {
 	// TODO: Not yet implemented.
 	return nil, status.Error(codes.Unimplemented, "TODO: You should implement it!")
 }
 
-func (s *libraryServiceServerImpl) CreateBook(ctx context.Context, req *api_pb.CreateBookRequest) (*api_pb.Book, error) {
+func (s *libraryServiceServerImpl) CreateBook(ctx context.Context, req *api_pb.CreateBookRequest) (*type_pb.Book, error) {
 	// TODO: Not yet implemented.
 	return nil, status.Error(codes.Unimplemented, "TODO: You should implement it!")
 }
 
-func (s *libraryServiceServerImpl) UpdateBook(ctx context.Context, req *api_pb.UpdateBookRequest) (*api_pb.Book, error) {
+func (s *libraryServiceServerImpl) UpdateBook(ctx context.Context, req *api_pb.UpdateBookRequest) (*type_pb.Book, error) {
 	// TODO: Not yet implemented.
 	return nil, status.Error(codes.Unimplemented, "TODO: You should implement it!")
 }
