@@ -22,7 +22,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/apiListBooksResponse"
+              "$ref": "#/definitions/grapi_playgroundListBooksResponse"
             }
           }
         },
@@ -135,7 +135,7 @@
     }
   },
   "definitions": {
-    "apiListBooksResponse": {
+    "grapi_playgroundListBooksResponse": {
       "type": "object",
       "properties": {
         "books": {

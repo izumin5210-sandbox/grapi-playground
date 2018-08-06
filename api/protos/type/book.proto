@@ -1,6 +1,6 @@
 syntax = "proto3";
 option go_package = "github.com/izumin5210/grapi-playground/api/type_pb";
-package com.github.izumin5210_sandbox.grapi_playground.api.type;
+package izumin5210.sandbox.grapi_playground.type;
 
 message Book {
   string book_id = 1;
