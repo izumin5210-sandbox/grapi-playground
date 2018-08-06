@@ -4,17 +4,18 @@ out_dir = "./api"
 import_dirs = [
   "./vendor/github.com/grpc-ecosystem/grpc-gateway",
   "./vendor/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis",
+  "./api/protos",
 ]
 
   [[protoc.plugins]]
   path = "./vendor/github.com/golang/protobuf/protoc-gen-go"
   name = "go"
-  args = { plugins = "grpc" }
+  args = { plugins = "grpc", paths = "source_relative" }
 
   [[protoc.plugins]]
   path = "./vendor/github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway"
   name = "grpc-gateway"
-  args = { logtostderr = true }
+  args = { logtostderr = true, paths = "source_relative" }
 
   [[protoc.plugins]]
   path = "./vendor/github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger"

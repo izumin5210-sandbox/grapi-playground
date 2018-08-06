@@ -5,24 +5,26 @@ package com.github.izumin5210_sandbox.grapi_playground.api;
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 
+import "type/book.proto";
+
 service LibraryService {
   rpc ListBooks (ListBooksRequest) returns (ListBooksResponse) {
     option (google.api.http) = {
       get: "/books"
     };
   }
-  rpc GetBook (GetBookRequest) returns (Book) {
+  rpc GetBook (GetBookRequest) returns (type.Book) {
     option (google.api.http) = {
       get: "/books/{book_id}"
     };
   }
-  rpc CreateBook (CreateBookRequest) returns (Book) {
+  rpc CreateBook (CreateBookRequest) returns (type.Book) {
     option (google.api.http) = {
       post: "/books"
       body: "book"
     };
   }
-  rpc UpdateBook (UpdateBookRequest) returns (Book) {
+  rpc UpdateBook (UpdateBookRequest) returns (type.Book) {
     option (google.api.http) = {
       patch: "/books/{book.book_id}"
       body: "book"
@@ -35,15 +37,11 @@ service LibraryService {
   }
 }
 
-message Book {
-  string book_id = 1;
-}
-
 message ListBooksRequest {
 }
 
 message ListBooksResponse {
-  repeated Book books = 1;
+  repeated type.Book books = 1;
 }
 
 message GetBookRequest {
@@ -51,11 +49,11 @@ message GetBookRequest {
 }
 
 message CreateBookRequest {
-  Book book = 1;
+  type.Book book = 1;
 }
 
 message UpdateBookRequest {
-  Book book = 1;
+  type.Book book = 1;
 }
 
 message DeleteBookRequest {
