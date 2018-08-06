@@ -7,7 +7,7 @@ import proto "github.com/golang/protobuf/proto"
 import fmt "fmt"
 import math "math"
 import empty "github.com/golang/protobuf/ptypes/empty"
-import type_pb "github.com/izumin5210/grapi-playground/type_pb"
+import type_pb "github.com/izumin5210/grapi-playground/api/type_pb"
 import _ "google.golang.org/genproto/googleapis/api/annotations"
 
 import (
