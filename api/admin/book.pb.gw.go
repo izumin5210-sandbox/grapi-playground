@@ -2,11 +2,11 @@
 // source: book.proto
 
 /*
-Package internal_pb is a reverse proxy.
+Package admin_pb is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package internal_pb
+package admin_pb
 
 import (
 	"io"

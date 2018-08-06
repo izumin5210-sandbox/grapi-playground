@@ -2,7 +2,7 @@ package app
 
 import (
 	"github.com/izumin5210-sandbox/grapi-playground/app/server"
-	"github.com/izumin5210-sandbox/grapi-playground/app/server/internal"
+	"github.com/izumin5210-sandbox/grapi-playground/app/server/admin"
 	"github.com/izumin5210/grapi/pkg/grapiserver"
 )
 
@@ -12,7 +12,7 @@ func Run() error {
 		grapiserver.WithDefaultLogger(),
 		grapiserver.WithServers(
 			server.NewLibraryServiceServer(),
-			internal.NewBookServiceServer(),
+			admin.NewBookServiceServer(),
 		),
 	)
 	return s.Serve()

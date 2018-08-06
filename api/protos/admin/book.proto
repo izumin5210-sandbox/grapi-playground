@@ -1,6 +1,6 @@
 syntax = "proto3";
-option go_package = "internal_pb";
-package izumin5210.sandbox.grapi_playground.internal;
+option go_package = "admin_pb";
+package izumin5210.sandbox.grapi_playground.admin;
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";

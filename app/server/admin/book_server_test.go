@@ -1,19 +1,17 @@
-package internal
+package admin
 
 import (
 	"context"
 	"testing"
 
-	"github.com/golang/protobuf/ptypes/empty"
-
-	internal_pb "github.com/izumin5210-sandbox/grapi-playground/api/internal"
+	admin_pb "github.com/izumin5210-sandbox/grapi-playground/api/admin"
 )
 
 func Test_BookServiceServer_ListBooks(t *testing.T) {
 	svr := NewBookServiceServer()
 
 	ctx := context.Background()
-	req := &internal_pb.ListBooksRequest{}
+	req := &admin_pb.ListBooksRequest{}
 
 	resp, err := svr.ListBooks(ctx, req)
 
@@ -30,7 +28,7 @@ func Test_BookServiceServer_GetBook(t *testing.T) {
 	svr := NewBookServiceServer()
 
 	ctx := context.Background()
-	req := &internal_pb.GetBookRequest{}
+	req := &admin_pb.GetBookRequest{}
 
 	resp, err := svr.GetBook(ctx, req)
 
@@ -47,7 +45,7 @@ func Test_BookServiceServer_CreateBook(t *testing.T) {
 	svr := NewBookServiceServer()
 
 	ctx := context.Background()
-	req := &internal_pb.CreateBookRequest{}
+	req := &admin_pb.CreateBookRequest{}
 
 	resp, err := svr.CreateBook(ctx, req)
 
@@ -64,7 +62,7 @@ func Test_BookServiceServer_UpdateBook(t *testing.T) {
 	svr := NewBookServiceServer()
 
 	ctx := context.Background()
-	req := &internal_pb.UpdateBookRequest{}
+	req := &admin_pb.UpdateBookRequest{}
 
 	resp, err := svr.UpdateBook(ctx, req)
 
@@ -81,7 +79,7 @@ func Test_BookServiceServer_DeleteBook(t *testing.T) {
 	svr := NewBookServiceServer()
 
 	ctx := context.Background()
-	req := &internal_pb.DeleteBookRequest{}
+	req := &admin_pb.DeleteBookRequest{}
 
 	resp, err := svr.DeleteBook(ctx, req)
 

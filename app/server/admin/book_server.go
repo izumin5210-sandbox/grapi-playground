@@ -1,4 +1,4 @@
-package internal
+package admin
 
 import (
 	"context"
@@ -8,13 +8,13 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	internal_pb "github.com/izumin5210-sandbox/grapi-playground/api/internal"
+	admin_pb "github.com/izumin5210-sandbox/grapi-playground/api/admin"
 	type_pb "github.com/izumin5210-sandbox/grapi-playground/api/type"
 )
 
 // NewBookServiceServer creates a new BookServiceServer instance.
 func NewBookServiceServer() interface {
-	internal_pb.BookServiceServer
+	admin_pb.BookServiceServer
 	grapiserver.Server
 } {
 	return &bookServiceServerImpl{}
@@ -23,27 +23,27 @@ func NewBookServiceServer() interface {
 type bookServiceServerImpl struct {
 }
 
-func (s *bookServiceServerImpl) ListBooks(ctx context.Context, req *internal_pb.ListBooksRequest) (*internal_pb.ListBooksResponse, error) {
+func (s *bookServiceServerImpl) ListBooks(ctx context.Context, req *admin_pb.ListBooksRequest) (*admin_pb.ListBooksResponse, error) {
 	// TODO: Not yet implemented.
 	return nil, status.Error(codes.Unimplemented, "TODO: You should implement it!")
 }
 
-func (s *bookServiceServerImpl) GetBook(ctx context.Context, req *internal_pb.GetBookRequest) (*type_pb.Book, error) {
+func (s *bookServiceServerImpl) GetBook(ctx context.Context, req *admin_pb.GetBookRequest) (*type_pb.Book, error) {
 	// TODO: Not yet implemented.
 	return nil, status.Error(codes.Unimplemented, "TODO: You should implement it!")
 }
 
-func (s *bookServiceServerImpl) CreateBook(ctx context.Context, req *internal_pb.CreateBookRequest) (*type_pb.Book, error) {
+func (s *bookServiceServerImpl) CreateBook(ctx context.Context, req *admin_pb.CreateBookRequest) (*type_pb.Book, error) {
 	// TODO: Not yet implemented.
 	return nil, status.Error(codes.Unimplemented, "TODO: You should implement it!")
 }
 
-func (s *bookServiceServerImpl) UpdateBook(ctx context.Context, req *internal_pb.UpdateBookRequest) (*type_pb.Book, error) {
+func (s *bookServiceServerImpl) UpdateBook(ctx context.Context, req *admin_pb.UpdateBookRequest) (*type_pb.Book, error) {
 	// TODO: Not yet implemented.
 	return nil, status.Error(codes.Unimplemented, "TODO: You should implement it!")
 }
 
-func (s *bookServiceServerImpl) DeleteBook(ctx context.Context, req *internal_pb.DeleteBookRequest) (*empty.Empty, error) {
+func (s *bookServiceServerImpl) DeleteBook(ctx context.Context, req *admin_pb.DeleteBookRequest) (*empty.Empty, error) {
 	// TODO: Not yet implemented.
 	return nil, status.Error(codes.Unimplemented, "TODO: You should implement it!")
 }

@@ -22,7 +22,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/internalListBooksResponse"
+              "$ref": "#/definitions/adminListBooksResponse"
             }
           }
         },
@@ -135,7 +135,7 @@
     }
   },
   "definitions": {
-    "internalListBooksResponse": {
+    "adminListBooksResponse": {
       "type": "object",
       "properties": {
         "books": {
