@@ -1,5 +1,5 @@
 syntax = "proto3";
-option go_package = "admin_pb";
+option go_package = "github.com/izumin5210-sandbox/grapi-playground/api/admin;admin_pb";
 package izumin5210.sandbox.grapi_playground.admin;
 
 import "google/api/annotations.proto";
