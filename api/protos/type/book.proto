@@ -1,5 +1,5 @@
 syntax = "proto3";
-option go_package = "github.com/izumin5210/grapi-playground/api/type_pb";
+option go_package = "github.com/izumin5210-sandbox/grapi-playground/api/type;type_pb";
 package izumin5210.sandbox.grapi_playground.type;
 
 message Book {

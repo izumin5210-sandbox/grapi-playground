@@ -7,7 +7,7 @@ import proto "github.com/golang/protobuf/proto"
 import fmt "fmt"
 import math "math"
 import empty "github.com/golang/protobuf/ptypes/empty"
-import type_pb "github.com/izumin5210/grapi-playground/api/type_pb"
+import _type "github.com/izumin5210-sandbox/grapi-playground/api/type"
 import _ "google.golang.org/genproto/googleapis/api/annotations"
 
 import (
@@ -57,10 +57,10 @@ func (m *ListBooksRequest) XXX_DiscardUnknown() {
 var xxx_messageInfo_ListBooksRequest proto.InternalMessageInfo
 
 type ListBooksResponse struct {
-	Books                []*type_pb.Book `protobuf:"bytes,1,rep,name=books" json:"books,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
-	XXX_unrecognized     []byte          `json:"-"`
-	XXX_sizecache        int32           `json:"-"`
+	Books                []*_type.Book `protobuf:"bytes,1,rep,name=books" json:"books,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
+	XXX_unrecognized     []byte        `json:"-"`
+	XXX_sizecache        int32         `json:"-"`
 }
 
 func (m *ListBooksResponse) Reset()         { *m = ListBooksResponse{} }
@@ -87,7 +87,7 @@ func (m *ListBooksResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_ListBooksResponse proto.InternalMessageInfo
 
-func (m *ListBooksResponse) GetBooks() []*type_pb.Book {
+func (m *ListBooksResponse) GetBooks() []*_type.Book {
 	if m != nil {
 		return m.Books
 	}
@@ -133,10 +133,10 @@ func (m *GetBookRequest) GetBookId() string {
 }
 
 type CreateBookRequest struct {
-	Book                 *type_pb.Book `protobuf:"bytes,1,opt,name=book" json:"book,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
-	XXX_unrecognized     []byte        `json:"-"`
-	XXX_sizecache        int32         `json:"-"`
+	Book                 *_type.Book `protobuf:"bytes,1,opt,name=book" json:"book,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
+	XXX_unrecognized     []byte      `json:"-"`
+	XXX_sizecache        int32       `json:"-"`
 }
 
 func (m *CreateBookRequest) Reset()         { *m = CreateBookRequest{} }
@@ -163,7 +163,7 @@ func (m *CreateBookRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_CreateBookRequest proto.InternalMessageInfo
 
-func (m *CreateBookRequest) GetBook() *type_pb.Book {
+func (m *CreateBookRequest) GetBook() *_type.Book {
 	if m != nil {
 		return m.Book
 	}
@@ -171,10 +171,10 @@ func (m *CreateBookRequest) GetBook() *type_pb.Book {
 }
 
 type UpdateBookRequest struct {
-	Book                 *type_pb.Book `protobuf:"bytes,1,opt,name=book" json:"book,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
-	XXX_unrecognized     []byte        `json:"-"`
-	XXX_sizecache        int32         `json:"-"`
+	Book                 *_type.Book `protobuf:"bytes,1,opt,name=book" json:"book,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
+	XXX_unrecognized     []byte      `json:"-"`
+	XXX_sizecache        int32       `json:"-"`
 }
 
 func (m *UpdateBookRequest) Reset()         { *m = UpdateBookRequest{} }
@@ -201,7 +201,7 @@ func (m *UpdateBookRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_UpdateBookRequest proto.InternalMessageInfo
 
-func (m *UpdateBookRequest) GetBook() *type_pb.Book {
+func (m *UpdateBookRequest) GetBook() *_type.Book {
 	if m != nil {
 		return m.Book
 	}
@@ -267,9 +267,9 @@ const _ = grpc.SupportPackageIsVersion4
 
 type BookServiceClient interface {
 	ListBooks(ctx context.Context, in *ListBooksRequest, opts ...grpc.CallOption) (*ListBooksResponse, error)
-	GetBook(ctx context.Context, in *GetBookRequest, opts ...grpc.CallOption) (*type_pb.Book, error)
-	CreateBook(ctx context.Context, in *CreateBookRequest, opts ...grpc.CallOption) (*type_pb.Book, error)
-	UpdateBook(ctx context.Context, in *UpdateBookRequest, opts ...grpc.CallOption) (*type_pb.Book, error)
+	GetBook(ctx context.Context, in *GetBookRequest, opts ...grpc.CallOption) (*_type.Book, error)
+	CreateBook(ctx context.Context, in *CreateBookRequest, opts ...grpc.CallOption) (*_type.Book, error)
+	UpdateBook(ctx context.Context, in *UpdateBookRequest, opts ...grpc.CallOption) (*_type.Book, error)
 	DeleteBook(ctx context.Context, in *DeleteBookRequest, opts ...grpc.CallOption) (*empty.Empty, error)
 }
 
@@ -290,8 +290,8 @@ func (c *bookServiceClient) ListBooks(ctx context.Context, in *ListBooksRequest,
 	return out, nil
 }
 
-func (c *bookServiceClient) GetBook(ctx context.Context, in *GetBookRequest, opts ...grpc.CallOption) (*type_pb.Book, error) {
-	out := new(type_pb.Book)
+func (c *bookServiceClient) GetBook(ctx context.Context, in *GetBookRequest, opts ...grpc.CallOption) (*_type.Book, error) {
+	out := new(_type.Book)
 	err := grpc.Invoke(ctx, "/izumin5210.sandbox.grapi_playground.internal.BookService/GetBook", in, out, c.cc, opts...)
 	if err != nil {
 		return nil, err
@@ -299,8 +299,8 @@ func (c *bookServiceClient) GetBook(ctx context.Context, in *GetBookRequest, opt
 	return out, nil
 }
 
-func (c *bookServiceClient) CreateBook(ctx context.Context, in *CreateBookRequest, opts ...grpc.CallOption) (*type_pb.Book, error) {
-	out := new(type_pb.Book)
+func (c *bookServiceClient) CreateBook(ctx context.Context, in *CreateBookRequest, opts ...grpc.CallOption) (*_type.Book, error) {
+	out := new(_type.Book)
 	err := grpc.Invoke(ctx, "/izumin5210.sandbox.grapi_playground.internal.BookService/CreateBook", in, out, c.cc, opts...)
 	if err != nil {
 		return nil, err
@@ -308,8 +308,8 @@ func (c *bookServiceClient) CreateBook(ctx context.Context, in *CreateBookReques
 	return out, nil
 }
 
-func (c *bookServiceClient) UpdateBook(ctx context.Context, in *UpdateBookRequest, opts ...grpc.CallOption) (*type_pb.Book, error) {
-	out := new(type_pb.Book)
+func (c *bookServiceClient) UpdateBook(ctx context.Context, in *UpdateBookRequest, opts ...grpc.CallOption) (*_type.Book, error) {
+	out := new(_type.Book)
 	err := grpc.Invoke(ctx, "/izumin5210.sandbox.grapi_playground.internal.BookService/UpdateBook", in, out, c.cc, opts...)
 	if err != nil {
 		return nil, err
@@ -330,9 +330,9 @@ func (c *bookServiceClient) DeleteBook(ctx context.Context, in *DeleteBookReques
 
 type BookServiceServer interface {
 	ListBooks(context.Context, *ListBooksRequest) (*ListBooksResponse, error)
-	GetBook(context.Context, *GetBookRequest) (*type_pb.Book, error)
-	CreateBook(context.Context, *CreateBookRequest) (*type_pb.Book, error)
-	UpdateBook(context.Context, *UpdateBookRequest) (*type_pb.Book, error)
+	GetBook(context.Context, *GetBookRequest) (*_type.Book, error)
+	CreateBook(context.Context, *CreateBookRequest) (*_type.Book, error)
+	UpdateBook(context.Context, *UpdateBookRequest) (*_type.Book, error)
 	DeleteBook(context.Context, *DeleteBookRequest) (*empty.Empty, error)
 }
 
